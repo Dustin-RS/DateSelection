@@ -1,0 +1,102 @@
+/* App.css */
+
+/* Apply styles to the entire app body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Background color for the entire app */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the date picker container */
+.App {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Background color for the date picker */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 5px;
+}
+
+/* Style the header with month and year selectors */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center the content */
+  margin-bottom: 20px; /* Increase the margin for better spacing */
+}
+
+/* Style the month and year selectors */
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}	
+
+/* Style the calendar table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* Set the background color for the table */
+}
+
+/* Style table headers */
+th, td {
+  height: 25px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold; /* Make headers bold */
+}
+
+/* Make button fill as much space as possible in table cell */
+tr{
+   height:auto;
+   text-align:center;
+   margin:0;
+   padding:0;
+}
+
+/* Style the input field */
+input[type="text"] {
+  width: 95%;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style the each month date button in the table*/
+.date-cell {
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  cursor: pointer;
+  border: 1px solid #3498db;
+  background-color: transparent;
+  border: none;
+
+}
+
+.date-cell:hover {
+  background-color: #007bff; /* A darker blue color */
+}
+
+/* Style the month changer buttons*/
+.prev-month, .next-month {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  font-size: 25px;
+  border-radius: 5px;
+  text-align:center;
+  background-color: #f9f9f9;
+}
