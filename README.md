@@ -15,5 +15,5 @@ Now you can simply open via browser **calendar.html**
 
 ## Demo
 
-![first_level_demo](https://github.com/Dustin-RS/DateSelection/assets/79257827/50db50dd-bfb7-4170-b604-a26ad46a8d51)
 
+![first_level](https://github.com/Dustin-RS/DateSelection/assets/79257827/5da65156-148f-4cf6-bb2b-b0bc6b03069d)
