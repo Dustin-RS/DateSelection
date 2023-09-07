@@ -15,6 +15,7 @@ cd typescript-app
 Then you need to use npm commands, that's why make sure that the **node.js is installed on your computer**.
 We need to install modules in order to work with react.
 ```bash
+npm install react-scripts --save
 npm start
 ```
 Now you can simply open via browser **calendar.html**
