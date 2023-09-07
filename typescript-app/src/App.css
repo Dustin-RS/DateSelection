@@ -33,7 +33,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-}
+}	
 
 /* Style the calendar table */
 table {
@@ -44,6 +44,7 @@ table {
 
 /* Style table headers */
 th, td {
+  height: 25px;
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
@@ -54,28 +55,18 @@ th {
   font-weight: bold; /* Make headers bold */
 }
 
-/* Style today's date cell */
-.today {
-  background-color: #f0f0f0;
-}
-
-/* Style the selected date cell */
-.selected {
-  background-color: #3498db;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 50%; /* Make the selected date cell circular */
-  transition: background-color 0.2s; /* Add a smooth transition */
-}
-
-/* Change the background color on hover for selected date */
-.selected:hover {
-  background-color: #007bff; /* A darker blue color */
+/* Make button fill as much space as possible in table cell */
+tr{
+   height:auto;
+   text-align:center;
+   margin:0;
+   padding:0;
 }
 
 /* Style the input field */
 input[type="text"] {
-  width: 100%;
+  width: 95%;
+  margin: 10px 0 0 0;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -83,21 +74,30 @@ input[type="text"] {
   background-color: #f9f9f9;
 }
 
-/* Style the invalid input */
-.invalid-input {
-  border-color: #e74c3c;
-  background-color: #f9c5c3;
-  color: #e74c3c;
-}
-
+/* Style the each month date button in the table*/
 .date-cell {
-	cursor: pointer;
-	border: 1px solid #3498db;
-	background-color: transparent;
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  cursor: pointer;
+  border: 1px solid #3498db;
+  background-color: transparent;
   border: none;
 
 }
+
 .date-cell:hover {
   background-color: #007bff; /* A darker blue color */
+}
+
+/* Style the month changer buttons*/
+.prev-month, .next-month {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  font-size: 25px;
+  border-radius: 5px;
+  text-align:center;
+  background-color: #f9f9f9;
 }
 
