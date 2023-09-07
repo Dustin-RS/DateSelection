@@ -22,4 +22,7 @@ Now you can simply open via browser **calendar.html**
 
 ## Demo
 
-![ezgif com-video-to-gif](https://github.com/Dustin-RS/DateSelection/assets/79257827/bec5f9a9-8611-4e96-a734-dabd9969deed)
+
+https://github.com/Dustin-RS/DateSelection/assets/79257827/5ef6e05a-a6cd-44cc-98ad-054cfe1f659c
+
+
