@@ -58,7 +58,7 @@ function updateCalendar(day_in=1) {
             const day = parseInt(dayElement.textContent);
             selectedDate = new Date(selectedYear, selectedMonth, day);
             updateCalendar();
-            selectedDateInput.value = selectedDate.toLocaleDateString();
+            selectedDateInput.value = selectedDate.toLocaleDateString("en-US");
         });
     });
 }
@@ -109,4 +109,4 @@ nextMonthButton.addEventListener("click", () => {
 
 
 updateCalendar();
-selectedDateInput.value = selectedDate.toLocaleDateString();
+selectedDateInput.value = selectedDate.toLocaleDateString("en-US");
