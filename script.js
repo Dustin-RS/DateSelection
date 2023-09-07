@@ -11,7 +11,7 @@ const nextMonthButton = document.getElementById("next-month");
 
 let selectedDate = new Date();
 
-function updateCalendar() {
+function updateCalendar(day_in=1) {
     const selectedMonth = monthSelector.selectedIndex;
     const selectedYear = parseInt(yearSelector.value);
     const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
@@ -20,7 +20,7 @@ function updateCalendar() {
     let calendarHTML = '<table>';
     calendarHTML += '<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>';
     
-    let day = 1;
+    let day = day_in;
     for (let i = 0; i < 6; i++) {
         calendarHTML += '<tr>';
         for (let j = 0; j < 7; j++) {
@@ -94,6 +94,7 @@ nextMonthButton.addEventListener("click", () => {
     if (selectedDate.getMonth() > 11) {
         selectedDate.setMonth(0);
         selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+
     }
     updateCalendar();
     monthSelector.selectedIndex = selectedDate.getMonth();
