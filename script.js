@@ -12,6 +12,7 @@ const nextMonthButton = document.getElementById("next-month");
 let selectedDate = new Date();
 
 function updateCalendar(day_in=1) {
+	// Updates calendarHtml in every action
     const selectedMonth = monthSelector.selectedIndex;
     const selectedYear = parseInt(yearSelector.value);
     const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
@@ -33,7 +34,7 @@ function updateCalendar(day_in=1) {
                 const isCurrentYear = date.getFullYear() === currentDate.getFullYear();
                 const isToday = isCurrentMonth && isCurrentYear && day === currentDate.getDate();
                 const isSelected = selectedDate.toDateString() === date.toDateString();
-
+				// Depended on className the style of cell will be changing for selected date and non-selected
                 const classNames = [];
                 if (isToday) classNames.push("today");
                 if (isSelected) classNames.push("selected");
@@ -49,7 +50,8 @@ function updateCalendar(day_in=1) {
     }
     calendarHTML += '</table>';
     calendar.innerHTML = calendarHTML;
-
+	
+	// Set for each sell EventListener which will change selected date depended on click
     const calendarDays = calendar.querySelectorAll("td");
     calendarDays.forEach(dayElement => {
         dayElement.addEventListener("click", () => {
@@ -62,6 +64,7 @@ function updateCalendar(day_in=1) {
 }
 
 months.forEach((month, index) => {
+	// Month list
     const option = document.createElement("option");
     option.value = index;
     option.textContent = month;
@@ -69,6 +72,7 @@ months.forEach((month, index) => {
 });
 
 years.forEach(year => {
+	// Year list
     const option = document.createElement("option");
     option.value = year;
     option.textContent = year;
@@ -79,6 +83,7 @@ monthSelector.selectedIndex = selectedDate.getMonth();
 yearSelector.value = selectedDate.getFullYear();
 
 prevMonthButton.addEventListener("click", () => {
+	//EventListener for prevMonthButton which will decrement the month number
     selectedDate.setMonth(selectedDate.getMonth() - 1);
     if (selectedDate.getMonth() < 0) {
         selectedDate.setMonth(11);
@@ -90,6 +95,7 @@ prevMonthButton.addEventListener("click", () => {
 });
 
 nextMonthButton.addEventListener("click", () => {
+	//EventListener for nextMonthButton which will increment the month number
     selectedDate.setMonth(selectedDate.getMonth() + 1);
     if (selectedDate.getMonth() > 11) {
         selectedDate.setMonth(0);
