@@ -9,10 +9,12 @@ git clone https://github.com/Dustin-RS/DateSelection.git
 Consequently, do following comands
 ```bash
 cd DateSelection
-git checkout first_level
+git checkout second_level
+cd second_level
 ```
 Now you can simply open via browser **calendar.html**
 
 ## Demo
 
-![second_level](https://github.com/Dustin-RS/DateSelection/assets/79257827/84084ed1-129a-4cb0-9752-d8d516c2c2a3)
+
+https://github.com/Dustin-RS/DateSelection/assets/79257827/b8b9089e-0c52-4954-bc9c-e0003a6566d2
