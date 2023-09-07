@@ -12,13 +12,9 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [year, setYear] = useState(selectedDate.getFullYear());
   const [month, setMonth] = useState(selectedDate.getMonth());
-  const [inputDate, setInputDate] = useState(selectedDate.toLocaleDateString());
-  const [calendarHTML, setCalendarHTML] = useState('');
+  const [inputDate, setInputDate] = useState(selectedDate.toLocaleDateString("en-US"));
   const selectedMonth = month;
   const selectedYear = year;
-  let classNames = [];
-  let state = false;
-  const [isActive, setActive] = useState(false);
   const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
   const firstDayOfMonth = new Date(selectedYear, selectedMonth, 1).getDay();
 
@@ -26,10 +22,11 @@ const App = () => {
   const handleDateClick = (day) => {
     const newSelectedDate = new Date(year, month, day);
     setSelectedDate(newSelectedDate);
-    setInputDate(newSelectedDate.toLocaleDateString());
+    setInputDate(newSelectedDate.toLocaleDateString("en-US"));
   };
 
   const handleMonthChange = (increment) => {
+	// Increments or decrements current month depended on clicked button
     const newMonth = month + increment;
     if (newMonth < 0) {
       setMonth(11);
@@ -47,6 +44,7 @@ const App = () => {
   };
 
   const handleInputBlur = () => {
+	 // Check for valid date using moments
     const newDate = new Date(inputDate);
     
 	var date = moment(inputDate);
@@ -63,18 +61,22 @@ const App = () => {
     <div className="App">
       <div className="header">
         <button onClick={() => handleMonthChange(-1)}>&#8249;</button>
+		
         <select value={month} onChange={(e) => setMonth(parseInt(e.target.value))}>
           {months.map((monthName, index) => (
             <option key={index} value={index}>{monthName}</option>
           ))}
         </select>
+		
         <select value={year} onChange={(e) => setYear(parseInt(e.target.value))}>
           {Array.from({ length: 10 }, (_, i) => (
             <option key={i} value={year - 5 + i}>{year - 5 + i}</option>
           ))}
         </select>
+		
         <button onClick={() => handleMonthChange(1)}>&#8250;</button>
       </div>
+	  
 	  <table>
         <thead>
           <tr>{daysOfWeek.map((day) => <th key={day}>{day}</th>)}</tr>
